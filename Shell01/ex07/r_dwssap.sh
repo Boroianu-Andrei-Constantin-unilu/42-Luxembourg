@@ -1,0 +1,1 @@
+awk 'BEGIN {FS=":"} /^#/ {next} NR % 2 == 0 {print $1}' /etc/passwd | tail -n +$((FT_LINE1)) | head -n $(($FT_LINE2 - $FT_LINE1 + 1)) | awk '{printf "%s", reverse($1)}' | sort -r | paste -sd, | sed 's/^/."/'
