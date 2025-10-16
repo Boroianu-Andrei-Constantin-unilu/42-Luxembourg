@@ -63,5 +63,5 @@ void *ft_print_memory(void *addr, unsigned int size) {
 		write(1, "\n", 1);
 		i += 16;
 	}
-	return (addr);
+	return addr;
 }

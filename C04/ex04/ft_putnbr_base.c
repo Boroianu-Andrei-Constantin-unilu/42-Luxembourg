@@ -6,21 +6,21 @@ int	check_base(char *base) {
 
 	while (base[i]) {
 		if (base[i] == '+' || base[i] == '-') {
-			return (0);
+			return 0;
         }
 		j = i + 1;
 		while (base[j]) {
 			if (base[i] == base[j]) {
-				return (0);
+				return 0;
             }
 			j++;
 		}
 		i++;
 	}
 	if (i < 2) {
-		return (0);
+		return 0;
     }
-	return (1);
+	return 1;
 }
 
 void ft_putnbr_base(int nbr, char *base) {
