@@ -50,3 +50,8 @@ void rush(int x, int y) {
         print_line(x, '\\', '*', '/');
     }
 }
+
+int main() {
+    rush(5, 3);
+    return 0;
+}
