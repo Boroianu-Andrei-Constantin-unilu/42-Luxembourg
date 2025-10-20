@@ -7,7 +7,7 @@ void ft_putstr_non_printable(char *str) {
     while (*str) {
         c = (unsigned char) *str;
         if (c < 32 || c > 126) {
-            write(1, '\\', 1);
+            write(1, "\\", 1);
             write(1, &hex[c / 16], 1);
             write(1, &hex[c % 16], 1);
         } else {
