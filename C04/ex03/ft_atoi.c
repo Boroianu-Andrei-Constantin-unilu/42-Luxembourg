@@ -1,21 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anboroia <anboroia@student.42luxembourg    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/21 17:45:05 by anboroia          #+#    #+#             */
+/*   Updated: 2025/10/21 18:39:34 by anboroia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-int	ft_atoi(char *str) {
-	int	i = 0;
-	int	sign = 1;
-	int	result = 0;
+int	ft_atoi(char *str)
+{
+	int	i;
+	int	sign;
+	int	result;
 
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ') {
+	i = 0;
+	sign = 1;
+	result = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 		i++;
-    }
-	while (str[i] == '+' || str[i] == '-') {
+	while (str[i] == '+' || str[i] == '-')
+	{
 		if (str[i] == '-')
 			sign *= -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9') {
+	while (str[i] >= '0' && str[i] <= '9')
+	{
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	return result * sign;
+	return (result * sign);
 }
