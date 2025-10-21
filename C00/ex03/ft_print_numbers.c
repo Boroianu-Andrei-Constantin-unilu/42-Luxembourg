@@ -1,9 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anboroia <anboroia@student.42luxembourg    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/21 17:45:05 by anboroia          #+#    #+#             */
+/*   Updated: 2025/10/21 17:53:53 by anboroia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_print_numbers(void) {
-    char c = '0';
-    while (c <= '9') {
-        write(1, &c, 1);
-        c++;
-    }
+void	ft_print_numbers(void)
+{
+	char	c;
+
+	c = '0';
+	while (c <= '9')
+	{
+		write(1, &c, 1);
+		c++;
+	}
 }
