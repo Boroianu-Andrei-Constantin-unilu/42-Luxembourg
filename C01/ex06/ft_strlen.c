@@ -1,10 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anboroia <anboroia@student.42luxembourg    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/21 17:45:05 by anboroia          #+#    #+#             */
+/*   Updated: 2025/10/21 18:09:34 by anboroia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-int ft_strlen(char *str) {
-    int len = 0;
+int	ft_strlen(char *str)
+{
+	int	len;
 
-    while (str[len] != '\0') {
-        len++;
-    }
-    return len;
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
 }
