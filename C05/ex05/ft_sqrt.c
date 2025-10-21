@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anboroia <anboroia@student.42luxembourg    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/21 17:45:05 by anboroia          #+#    #+#             */
+/*   Updated: 2025/10/21 18:58:14 by anboroia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-int	ft_sqrt(int nb) {
-	int	i = 1;
+int	ft_sqrt(int nb)
+{
+	int	i;
 
-	if (nb <= 0) {
+	if (nb <= 0)
 		return (0);
-    }
-
-	while (i * i <= nb && i <= 46340) {
-		if (i * i == nb) {
-			return i;
-        }
+	i = 0;
+	while (i * i <= nb && i <= 46340)
+	{
+		if (i * i == nb)
+			return (i);
 		i++;
 	}
-	return 0;
+	return (0);
 }
