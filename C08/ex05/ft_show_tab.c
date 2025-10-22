@@ -1,53 +1,49 @@
 #include <unistd.h>
 #include "ft_stock_str.h"
 
-static void ft_putstr(char *s) {
-    if (!s) {
-        return;
-    }
-    while (*s) {
+static void ft_putstr(char *s)
+{
+    if (!s)
+        return ;
+    while (*s)
         write(1, s++, 1);
-    }
 }
 
-static void ft_putchar(char c) {
-    write(1, &c, 1);
-}
-
-static void ft_putnbr(int nb) {
-    char c = (nb % 10) + '0';
-
-    if (nb == -2147483648) {
+static void ft_putnbr(int nb)
+{
+    char    c;
+    
+    c = (nb % 10) + '0';
+    if (nb == -2147483648)
+    {
         ft_putstr("-2147483648");
-        return;
+        return ;
     }
-
-    if (nb < 0) {
-        ft_putchar('-');
+    if (nb < 0)
+    {
+        write(1, '-', 1);
         nb = -nb;
     }
-
-    if (nb >= 10) {
+    if (nb >= 10)
         ft_putnbr(nb / 10);
-    }
-    
     ft_putchar(c);
 }
 
-void ft_show_tab(struct s_stock_str *par) {
-    int i = 0;
+void    ft_show_tab(struct s_stock_str *par)
+{
+    int i;
 
-    if (!par) {
-        return;
-    }
-
-    while (par[i].str) {
+    if (!par)
+        return ;
+    i = 0;
+    while (par[i].str)
+    {
         ft_putstr(par[i].str);
-        ft_putchar('\n');
+        write(1, '\n', 1);
         ft_putnbr(par[i].size);
-        ft_putchar('\n');
+        write(1, '\n', 1);
         ft_putstr(par[i].copy);
-        ft_putchar('\n');
+        write(1, '\n', 1);
         i++;
     }
 }
