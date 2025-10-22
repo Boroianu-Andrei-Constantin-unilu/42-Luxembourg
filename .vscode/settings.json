@@ -4,5 +4,8 @@
         "clang-diagnostic-int-conversion",
         "clang-diagnostic-int-conversion",
         "clang-diagnostic-int-conversion"
-    ]
+    ],
+    "files.associations": {
+        "stdlib.h": "c"
+    }
 }
