@@ -31,7 +31,7 @@ void	ft_print_comb(void)
 				write(1, &b, 1);
 				write(1, &c, 1);
 				if (!(a == '7' && b == '8' && c == '9'))
-					write(1, " ", 2);
+					write(1, ", ", 2);
 				c++;
 			}
 			b++;
