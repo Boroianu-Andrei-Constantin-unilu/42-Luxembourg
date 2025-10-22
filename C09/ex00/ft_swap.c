@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anboroia <anboroia@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 17:45:05 by anboroia          #+#    #+#             */
-/*   Updated: 2025/10/21 23:12:05 by anboroia         ###   ########.fr       */
+/*   Updated: 2025/10/22 17:45:41 by anboroia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
 
-void    ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
-    int temp;
+	int	temp;
 
-    temp = *a;
-    *a = *b;
-    *b = temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
