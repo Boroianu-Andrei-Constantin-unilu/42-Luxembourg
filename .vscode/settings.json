@@ -6,6 +6,7 @@
         "clang-diagnostic-int-conversion"
     ],
     "files.associations": {
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "unistd.h": "c"
     }
 }
