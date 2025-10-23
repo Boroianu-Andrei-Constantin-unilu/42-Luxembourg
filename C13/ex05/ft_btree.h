@@ -6,7 +6,7 @@
 /*   By: anboroia <anboroia@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 17:45:05 by anboroia          #+#    #+#             */
-/*   Updated: 2025/10/23 18:59:35 by anboroia         ###   ########.fr       */
+/*   Updated: 2025/10/23 22:38:47 by anboroia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ typedef struct b_tree
 	void			*item;
 }	t_btree;
 
-void	*btree_search_item(t_btree *root, void *data_ref,
-	int	(*cmpf)(void *, void *));
+void	*btree_search_item(
+			(t_btree *root, void *data_ref, int (*cmpf)(void *, void *)));
 #endif

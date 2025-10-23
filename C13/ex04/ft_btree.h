@@ -6,7 +6,7 @@
 /*   By: anboroia <anboroia@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 17:45:05 by anboroia          #+#    #+#             */
-/*   Updated: 2025/10/23 19:04:08 by anboroia         ###   ########.fr       */
+/*   Updated: 2025/10/23 22:37:45 by anboroia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ typedef struct b_tree
 	void			*item;
 }	t_btree;
 
-void	btree_insert_data(t_btree **root, void *item,
-	int	(*cmpf)(void *, void *));
+void	btree_insert_data(
+			(t_btree **root, void *item, int (*cmpf)(void *, void *)));
 #endif

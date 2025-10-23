@@ -6,7 +6,7 @@
 /*   By: anboroia <anboroia@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 17:45:05 by anboroia          #+#    #+#             */
-/*   Updated: 2025/10/23 17:54:20 by anboroia         ###   ########.fr       */
+/*   Updated: 2025/10/23 22:39:36 by anboroia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ typedef struct b_tree
 	void			*item;
 }	t_btree;
 
-t_btree	*btree_create_node(void *item);
-
+void	btree_apply_by_level(t_btree *root, void (*applyf)
+			(void *item, int current_level, int is_first_elem));
 #endif
