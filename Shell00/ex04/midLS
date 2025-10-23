@@ -1,1 +1,1 @@
-ls -t | tr '\n' ',' | sed 's/,/, /g;s/, $//'
+ls -p -t | grep -v '^\.' | paste -sd ', ' -
