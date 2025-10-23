@@ -6,7 +6,7 @@
 /*   By: anboroia <anboroia@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 17:45:05 by anboroia          #+#    #+#             */
-/*   Updated: 2025/10/22 20:37:25 by anboroia         ###   ########.fr       */
+/*   Updated: 2025/10/23 14:42:17 by anboroia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,6 @@ static void	process_fd(int fd, const char *name)
 		print_ascii(buf, r);
 		offset += (unsigned int)r;
 	}
-
 	if (r < 0)
 		print_error("hexdump", name ? name : "stdin");
 }
@@ -121,16 +120,14 @@ int	main(int argc, char **argv)
 		process_fd(0, NULL);
 		return (0);
 	}
-
 	if (argc >= 2 && strcmp(argv[1], "-C") == 0)
 		i = 2;
 	i = 1;
 	if (i >= argc)
 	{
 		process_fd(0, NULL);
-		return 0;
+		return (0);
 	}
-
 	prog = basename(argv[0]);
 	for (; i < argc; i++)
 	{
