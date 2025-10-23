@@ -1,2 +1,2 @@
-#!/bin/sh
-ls -l | awk 'NR % 2 == 1'
+#!/bin/bash
+ls -l | sed -n 'p;n'
