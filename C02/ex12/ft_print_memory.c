@@ -6,19 +6,24 @@
 /*   By: anboroia <anboroia@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 17:45:05 by anboroia          #+#    #+#             */
-/*   Updated: 2025/10/21 18:27:53 by anboroia         ###   ########.fr       */
+/*   Updated: 2025/10/23 22:46:16 by anboroia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	ft_print_hex(unsigned char c)
 {
 	char	*hex;
 
 	hex = "0123456789abcdef";
-	write(1, hex[c / 16], 1);
-	write(1, hex[c % 16], 1);
+	ft_putchar(hex[c / 16]);
+	ft_putchar(hex[c % 16]);
 }
 
 void	ft_print_address(unsigned long addr)
@@ -54,9 +59,9 @@ void	ft_print_content(unsigned char *addr, unsigned int size)
 	while (i < size)
 	{
 		if (addr[i] >= 32 && addr[i] <= 126)
-			write(1, addr[i], 1);
+			ft_putchar(addr[i]);
 		else
-			write(1, '.', 1);
+			ft_putchar('.');
 		i++;
 	}
 }
