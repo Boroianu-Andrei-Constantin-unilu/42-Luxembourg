@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anboroia <anboroia@student.42luxembourg    +#+  +:+       +#+        */
+/*   By: tminniti <tminniti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 17:45:05 by anboroia          #+#    #+#             */
-/*   Updated: 2025/10/23 14:43:05 by anboroia         ###   ########.fr       */
+/*   Created: 2025/10/26 18:31:45 by tminniti          #+#    #+#             */
+/*   Updated: 2025/10/26 18:31:46 by tminniti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	print_grid(int grid[4][4])
 {
-	write(1, &c, 1);
-}
+	int		r;
+	int		c;
+	char	ch;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
+	r = 0;
+	while (r < 4)
 	{
-		write(1, "-2147483648", 11);
-		return ;
+		c = 0;
+		while (c < 4)
+		{
+			ch = grid[r][c] + '0';
+			write(1, &ch, 1);
+			if (c < 3)
+				write(1, " ", 1);
+			c++;
+		}
+		write(1, "\n", 1);
+		r++;
 	}
-	if (nb < 0)
-	{
-		write(1, "-", 1);
-		nb = -nb;
-	}
-	if (nb >= 10)
-		ft_putnbr(nb / 10);
-	ft_putchar(nb % 10 + '0');
 }
