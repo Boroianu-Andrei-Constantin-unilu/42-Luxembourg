@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <fcntl.h>
-#include <errno.h>
+#include <stdlib.h>
 
 void    ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 {

@@ -14,15 +14,36 @@
 #include <stdlib.h>
 #include "ft_list.h"
 
-void    ft_list_foreach_if(t_list *begin_list, void (*f)(void *), void *data_ref, int (*cmp)())
+void    ft_sorted_list_merge(t_list **begin_list1, t_list *begin_list2, int (*cmp)())
 {
-    t_list  *ptr;
+    t_list dummy;
+    t_list *tail;
+    t_list *a;
+    t_list *b;
 
-    ptr = begin_list;
-    while (ptr)
+    if (!begin_list1)
+        return ;
+    a = *begin_list1;
+    b = begin_list2;
+    dummy.next = NULL;
+    tail = &dummy;
+    while (a && b)
     {
-        if ((*cmp)(ptr->data, data_ref) == 0)
-            (*f)(ptr->data);
-        ptr = ptr->next;
+        if ((*cmp)(a->data, b->data) <= 0)
+        {
+            tail->next = a;
+            a = a->next;
+        }
+        else
+        {
+            tail->next = b;
+            b = b->next;
+        }
+    tail = tail->next;
     }
+    if (a)
+        tail->next = a;
+    else
+        tail->next = b;
+    *begin_list1 = dummy.next;
 }

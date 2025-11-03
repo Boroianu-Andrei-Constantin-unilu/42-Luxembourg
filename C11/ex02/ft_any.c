@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <fcntl.h>
-#include <errno.h>
+#include <stdlib.h>
 
 int ft_any(char **tab, int (*f)(char *))
 {

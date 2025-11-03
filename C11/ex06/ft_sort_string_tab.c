@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <fcntl.h>
-#include <errno.h>
+#include <stdlib.h>
 
 int ft_strcmp(char *s1, char *s2)
 {

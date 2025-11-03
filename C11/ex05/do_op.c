@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 
 int	ft_atoi(char *str);
 int	add(int a, int b);

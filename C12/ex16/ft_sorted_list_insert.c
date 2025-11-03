@@ -14,15 +14,30 @@
 #include <stdlib.h>
 #include "ft_list.h"
 
-void    ft_list_foreach_if(t_list *begin_list, void (*f)(void *), void *data_ref, int (*cmp)())
+void    ft_sorted_list_insert(t_list **begin_list, void *data, int (*cmp)())
 {
-    t_list  *ptr;
+    t_list  *new;
+    t_list  *current;
+    t_list  *previous;
 
-    ptr = begin_list;
-    while (ptr)
+    if (!begin_list)
+        return ;
+    new = ft_create_elem(data);
+    if (!new)
+        return ;
+    if (!begin_list || (*cmp)(data, (*begin_list)->data) < 0)
     {
-        if ((*cmp)(ptr->data, data_ref) == 0)
-            (*f)(ptr->data);
-        ptr = ptr->next;
+        new->list = *begin_list;
+        *begin_list = new;
+        return ;
     }
+    previous = *begin_list;
+    current = previous->next;
+    while (current && (*cmp)(current->data, data) < 0)
+    {
+        previous = current;
+        current = current->next;
+    }
+    previous->next = new;
+    new->next = current;
 }

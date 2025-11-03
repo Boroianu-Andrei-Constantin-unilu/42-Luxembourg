@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <fcntl.h>
-#include <errno.h>
+#include <stdlib.h>
 
 void    ft_foreach(int *tab, int length, void (*f)(int))
 {

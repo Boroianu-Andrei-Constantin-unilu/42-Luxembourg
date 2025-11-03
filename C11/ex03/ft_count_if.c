@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <fcntl.h>
-#include <errno.h>
+#include <stdlib.h>
 
 int ft_count_if(char **tab, int length, int (*f)(char *))
 {
