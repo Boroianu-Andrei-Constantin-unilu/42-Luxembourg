@@ -10,23 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <fcntl.h>
-#include <errno.h>
-
-int    *ft_map(int *tab, int length, int (*f)(int))
+int ft_atoi(const char *str)
 {
-    int	*res;
-    int	i;
+    int i;
+    int sign;
+    int nb;
 
-    res = (int *)malloc(sizeof(int) * length);
-    if (!res)
-        return (0);
     i = 0;
-    while (i < length)
+    sign = 1;
+    nb = 0;
+    while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+        i++;
+    if (str[i] == '-' || str[i] == '+')
     {
-        res[i] = f(tab[i]);
+        if (str[i] == '-')
+            sign = -1;
         i++;
     }
-    return (res);
+    while (str[i] >= '0' && str[i] <= '9')
+    {
+        nb = nb * 10 + (str[i] - '0');
+        i++;
+    }
+    return (nb * sign);
 }
