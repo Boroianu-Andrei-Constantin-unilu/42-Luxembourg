@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   bsq.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anboroia <anboroia@student.42luxembourg    +#+  +:+       +#+        */
+/*   By: yourlogin <youremail@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 17:45:05 by anboroia          #+#    #+#             */
-/*   Updated: 2025/10/21 17:48:31 by anboroia         ###   ########.fr       */
+/*   Created: 2025/11/04 13:12:12 by yourlogin         #+#    #+#             */
+/*   Updated: 2025/11/04 13:12:25 by yourlogin        ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,14 @@ typedef struct s_square
 	int		size;
 }	t_square;
 
-/* file_utils.c */
 char	*read_file(char *filename);
-
-/* parse.c */
 t_map	*parse_map(char *content);
-
-/* validate.c */
 int		validate_map(t_map *map);
-
-/* solve.c */
 t_square	find_biggest_square(t_map *map);
 void		fill_square(t_map *map, t_square sq);
-
-/* display.c */
 void	display_map(t_map *map);
-
-/* error.c */
 void	print_error(void);
 void	free_map(t_map *map);
-
-/* utils.c */
 int		ft_strlen(char *s);
 int		ft_min(int a, int b);
 
