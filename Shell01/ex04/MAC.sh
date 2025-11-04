@@ -1,2 +1,2 @@
 #!/bin/sh
-ifconfig -a | grep ether | awk '{print $2}' | tr -d '\n'
+ip -brief link | awk '{print $1,$3}'
