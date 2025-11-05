@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   solve2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anboroia <anboroia@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 17:45:05 by anboroia          #+#    #+#             */
-/*   Updated: 2025/11/05 17:25:51 by anboroia         ###   ########.fr       */
+/*   Updated: 2025/11/05 17:31:05 by anboroia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/bsq.h"
 
-int	ft_strlen(char *s)
+void	fill_square(t_map *map, t_square sq)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (s && s[i])
+	while (i < sq.size)
+	{
+		j = 0;
+		while (j < sq.size)
+		{
+			map->grid[sq.row + i][sq.col + j] = map->full;
+			j++;
+		}
 		i++;
-	return (i);
-}
-
-int	ft_min(int a, int b)
-{
-	if (a < b)
-		return (a);
-	return (b);
+	}
 }

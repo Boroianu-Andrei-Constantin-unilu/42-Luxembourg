@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   file_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anboroia <anboroia@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 17:45:05 by anboroia          #+#    #+#             */
-/*   Updated: 2025/10/21 17:48:31 by anboroia         ###   ########.fr       */
+/*   Updated: 2025/11/05 17:30:14 by anboroia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bsq.h"
+#include "../includes/bsq.h"
 
 static int	init_fd(char *filename)
 {
@@ -61,12 +61,14 @@ char	*read_file(char *filename)
 	fd = init_fd(filename);
 	if (fd < 0)
 		return (NULL);
-	while ((bytes = read(fd, buf, sizeof(buf))) > 0)
+	bytes = read(fd, buf, sizeof(buf));
+	while (bytes > 0)
 	{
 		content = append_buffer(content, buf, bytes, len);
 		if (!content)
 			break ;
 		len += bytes;
+		bytes = read(fd, buf, sizeof(buf));
 	}
 	if (filename)
 		close(fd);
